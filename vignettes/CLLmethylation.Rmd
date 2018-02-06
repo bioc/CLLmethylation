@@ -1,0 +1,78 @@
+---
+title: "CLLmethylation"
+author: "Małgorzata Oleś"
+output: 
+  BiocStyle::html_document:
+    toc_float: true
+vignette: >
+  %\VignetteIndexEntry{CLLmethylation}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8} 
+---
+
+
+```{r}
+library("ExperimentHub")
+library("SummarizedExperiment")
+library("ggplot2")
+```
+
+# Introduction
+
+The resource `r Biocpkg("CLLmethylation")` contains complete DNA methylation data for chronic lymphocytic leukemia (CLL) patient samples. The subset of this data (for only most variable CpG sites) and the rest of the datasets and analysis resulting from the PACE project is available in `r Biocpkg("BloodCancerMultiOmics2017")`. All of the data mentioned above was used in the analysis, which results are included in:
+
+
+S Dietrich\*, M Oleś\*, J Lu\* et al. *Drug-perturbation-based stratification of blood cancer*
+<br>
+*J. Clin. Invest.* (2018); 128(1):427–445. doi:10.1172/JCI93801. 
+
+
+\* equal contribution
+
+
+The raw data from 450k DNA methylation arrays is stored in the European Genome-Phenome Archive (EGA) under accession number EGAS0000100174.
+
+
+# Example of analysis
+
+This dataset in combination with the `r Biocpkg("BloodCancerMultiOmics2017")` package contain rich resource for nearly 200 CLL primary samples. Here we show simple principal component analysis for the DNA methylation data.
+
+Obtain the data.
+```{r}
+eh = ExperimentHub()
+query(eh, "CLLmethylation")
+meth = eh[["EH1071"]] # extract the methylation data
+```
+
+Subset most variable CpG sites.
+```{r}
+methData <- t(assay(meth))
+#filter to only include top 5000 most variable sites
+ntop <- 5000
+methData <- methData[,order(apply(methData, 2, var, na.rm=T),
+                          decreasing = T)[1:ntop]]
+```
+
+Perform principal component analysis.
+```{r}
+# principal component analysis
+pcaMeth <- prcomp(methData, center=T, scale. = F)
+```
+
+Summary of components.
+```{r}
+summary(pcaMeth)
+```
+
+Visualize the components.
+```{r}
+tmp = data.frame(pcaMeth$x)
+ggplot(data=tmp, aes(x=PC1, y=PC2)) + geom_point() + theme_bw()
+```
+
+
+# End of session
+
+```{r}
+sessionInfo()
+```
