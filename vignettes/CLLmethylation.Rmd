@@ -46,17 +46,17 @@ meth = eh[["EH1071"]] # extract the methylation data
 
 Subset most variable CpG sites.
 ```{r}
-methData <- t(assay(meth))
+methData = t(assay(meth))
 #filter to only include top 5000 most variable sites
-ntop <- 5000
-methData <- methData[,order(apply(methData, 2, var, na.rm=T),
-                          decreasing = T)[1:ntop]]
+ntop = 5000
+methData = methData[,order(apply(methData, 2, var, na.rm=TRUE),
+                          decreasing=TRUE)[1:ntop]]
 ```
 
 Perform principal component analysis.
 ```{r}
 # principal component analysis
-pcaMeth <- prcomp(methData, center=T, scale. = F)
+pcaMeth = prcomp(methData, center=TRUE, scale. = FALSE)
 ```
 
 Summary of components.
