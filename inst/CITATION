@@ -1,0 +1,13 @@
+citEntry(entry="article",
+         title = "Drug-perturbation-based stratification of blood cancer",
+         author = "Sascha Dietrich AND Małgorzata Oleś AND Junyan Lu AND Leopold Sellner AND Simon Anders AND Britta Velten AND Bian Wu AND Jennifer Hüllein AND Michelle da Silva Liberio AND Tatjana Walther AND Lena Wagner AND Sophie Rabe AND Sonja Ghidelli-Disse AND Marcus Bantscheff AND Andrzej K. Oleś AND Mikołaj Słabicki AND Andreas Mock AND Christopher C. Oakes AND Shihui Wang AND Sina Oppermann AND Marina Lukas AND Vladislav Kim AND Martin Sill AND Axel Benner AND Anna Jauch AND Lesley Ann Sutton AND Emma Young AND Richard Rosenquist AND Xiyang Liu AND Alexander Jethwa AND Kwang Seok Lee AND Joe Lewis AND Kerstin Putzker AND Christoph Lutz AND Davide Rossi AND Andriy Mokhir AND Thomas Oellerich AND Katja Zirlik AND Marco Herling AND Florence Nguyen-Khac AND Christoph Plass AND Emma Andersson AND Satu Mustjoki AND Christof von Kalle AND Anthony D. Ho AND Manfred Hensel AND Jan Dürig AND Ingo Ringshausen AND Marc Zapatka AND Wolfgang Huber AND Thorsten Zenz",
+         year = 2018,
+         journal = "The Journal of Clinical Investigation",
+         doi = "10.1172/JCI93801",
+         volume = 128,
+         issue = 1,
+         pages = 427-445,
+         textVersion = 
+         paste("Dietrich S, Oleś M, Lu J et al.", 
+               "Drug-perturbation-based stratification of blood cancer",
+                "The Journal of Clinical Investigation 128(1)427:445 (2018)" ) )
