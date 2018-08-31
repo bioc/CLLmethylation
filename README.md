@@ -4,7 +4,8 @@
 To install the package, open R (>=3.5.0) and enter:
 
 ```
-source("https://bioconductor.org/biocLite.R")
-biocLite("CLLmethylation")
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("CLLmethylation")
 ```
 
