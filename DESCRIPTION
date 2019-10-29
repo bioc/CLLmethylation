@@ -1,6 +1,6 @@
 Package: CLLmethylation
 Title: Methylation data of primary CLL samples in PACE project
-Version: 1.6.0
+Version: 1.7.0
 Author: Malgorzata Oles, Andreas Mock
 Maintainer: Malgorzata Oles <malgorzata.oles@embl.de>, Andreas Mock <andreas.mock@embl.de>
 Description: The package includes DNA methylation data for the primary Chronic Lymphocytic Leukemia samples included in the Primary Blood Cancer Encyclopedia (PACE) project.
